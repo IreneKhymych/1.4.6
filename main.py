@@ -109,9 +109,9 @@ if __name__ == "__main__":
     obj2.show()
 
     diff_poly = obj.subtract(obj, obj2)
-    product_poly = obj2.multiply(obj2, diff_poly)
-    sum_poly = obj.add(obj, product_poly)
-
+    product_poly = obj2.multiply(obj2, obj)
+    sum_poly = obj.add(diff_poly, product_poly)
+    
     square_diff_poly = diff_poly.multiply(diff_poly, diff_poly)
     second_poly = obj2.multiply(obj2, square_diff_poly)
 
