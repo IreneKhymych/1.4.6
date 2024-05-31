@@ -108,16 +108,17 @@ if __name__ == "__main__":
     print("Polynom 2:")
     obj2.show()
 
-    sum_poly = obj.add(obj, obj2)
-
     diff_poly = obj.subtract(obj, obj2)
+    product_poly = obj2.multiply(obj2, diff_poly)
+    sum_poly = obj.add(obj, product_poly)
 
-    product_poly = obj.multiply(obj, obj2)
+    square_diff_poly = diff_poly.multiply(diff_poly, diff_poly)
+    second_poly = obj2.multiply(obj2, square_diff_poly)
 
     x = float(input("Enter a value for x: "))
 
     q_value = sum_poly.evaluate_at_point(x)
-    h_value = product_poly.evaluate_at_point(x)
+    h_value = second_poly.evaluate_at_point(x)
     print("Value of q(x):", q_value)
     print("Value of h(x):", h_value)
 
